@@ -1,12 +1,12 @@
-import fs from 'fs';
-import fetch from 'node-fetch';
-import data from "./all-data.json" assert { type: "json" };
+const fs = require('fs')
+const fetch = require('node-fetch-commonjs')
+const data = require('./all-data.json')
    
 // To solve the cors issue
-import cors from 'cors';
+const cors = require('cors')
 
 // json file with the data
-import express from "express";
+const express = require('express')
 const app = express();
   
    
@@ -100,4 +100,4 @@ async function getSub(request, response) {
 
 app.listen(port, () => console.log(`Server started at ${port}`));
 
-export default app
+module.exports = app
