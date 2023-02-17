@@ -1,6 +1,6 @@
 import fs from 'fs';
 import fetch from 'node-fetch';
-import data from "./all-data.json" assert { type: "json" };
+import data from "../all-data.json" assert { type: "json" };
    
 // To solve the cors issue
 import cors from 'cors';
