@@ -1,6 +1,6 @@
 import fs from 'fs';
 import fetch from 'node-fetch';
-import data from "../all-data.json" assert { type: "json" };
+import data from "./all-data.json" assert { type: "json" };
    
 // To solve the cors issue
 import cors from 'cors';
@@ -11,8 +11,6 @@ const app = express();
   
    
 const port = process.env.PORT || 4500;
-
-app.listen(port, () => console.log(`Server started at ${port}`));
 
 app.use(cors());
 
@@ -99,3 +97,7 @@ async function getSub(request, response) {
     response.set('Content-Type', 'text/plain')
     response.send('WEBVTT\n\n' + text)
 }
+
+app.listen(port, () => console.log(`Server started at ${port}`));
+
+export default app
