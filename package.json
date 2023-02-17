@@ -8,7 +8,7 @@
     "node": "14.x"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node ./api/server.js"
   },
   "keywords": [],
   "author": "",
