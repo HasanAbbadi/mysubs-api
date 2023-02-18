@@ -89,10 +89,12 @@ app.get('/get/:id', getSub);
 async function getSub(request, response) {
     const id = request.params.id;
     const res = await fetch(`https://www.mysubs.org/get-subtitle/${id}`)
-    const text = await res.text()
+    let text = await res.text()
 
+    // replace commas with dots
+    text = text.replace(/([0-9]{1,})(,)([0-9]{1,})/g,"$1.$3");
     response.set('Content-Type', 'text/plain')
-    response.send('WEBVTT\n\n' + text)
+    response.send(text)
 }
 
 app.listen(port, () => console.log(`Server started at ${port}`));
