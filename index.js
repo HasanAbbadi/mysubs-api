@@ -94,7 +94,7 @@ async function getSub(request, response) {
     // replace commas with dots
     text = text.replace(/([0-9]{1,})(,)([0-9]{1,})/g,"$1.$3");
     response.set('Content-Type', 'text/plain')
-    response.send(text)
+    response.send('WEBVTT\n\n' + text)
 }
 
 app.listen(port, () => console.log(`Server started at ${port}`));
