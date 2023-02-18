@@ -78,7 +78,7 @@ function searchElement(request, response) {
         return key == query
     })
 
-    if (result.length == 1){
+    if (result.length < 4){
         response.redirect(`/get/${result[0].id}`)
     }
     response.send(result)
